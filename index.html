@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YIQIAN GUO — Business, Supply Chain & Operations</title>
+<style>
+:root{
+  --navy:#173b56; --teal:#087f7c; --ink:#20282f; --muted:#6b777e;
+  --line:#dce6e8; --cream:#f7f5ef; --paper:#fff; --soft:#eef6f5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fbfcfc;line-height:1.55}
+a{color:inherit}
+.shell{max-width:1180px;margin:auto;padding:0 34px}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fbfcfcf2;backdrop-filter:blur(12px);z-index:10}
+.brand{font-weight:900;color:var(--navy);letter-spacing:-.4px}
+.brand span{color:var(--teal)}
+.tabs{display:flex;gap:8px;align-items:center}
+.tab{border:0;background:transparent;padding:9px 12px;border-radius:999px;color:var(--muted);font-weight:700;cursor:pointer}
+.tab:hover,.tab.active{background:var(--soft);color:var(--teal)}
+.cvbtn{border:1px solid var(--navy);color:var(--navy);text-decoration:none;padding:8px 13px;border-radius:999px;font-size:13px;font-weight:800;margin-left:5px}
+main{min-height:75vh}
+.panel{display:none;animation:fade .28s ease}.panel.active{display:block}
+@keyframes fade{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+.hero{display:grid;grid-template-columns:1.45fr .75fr;gap:70px;align-items:center;padding:95px 0 88px}
+.eyebrow{color:var(--teal);font-size:12px;font-weight:900;letter-spacing:1.7px;text-transform:uppercase}
+h1{font-size:66px;line-height:.98;letter-spacing:-3.2px;color:var(--navy);margin:14px 0 24px}
+.lead{font-size:21px;max-width:700px;color:#45535c}
+.hero-card{background:var(--navy);color:white;padding:34px;border-radius:4px;transform:rotate(1.3deg);box-shadow:14px 14px 0 #d8ece9}
+.hero-card .small{color:#a9dcd7;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;font-weight:900}
+.hero-card h2{font-size:27px;line-height:1.2;margin:9px 0 20px}
+.hero-card p{color:#dce8ed;font-size:14px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}.pill{border:1px solid #ffffff45;padding:6px 9px;border-radius:999px;font-size:11px}
+.quote{padding:36px 0 78px;font-family:Georgia,serif;font-size:31px;line-height:1.35;color:var(--navy);max-width:900px}
+.quote em{color:var(--teal)}
+.section{padding:72px 0}
+.title{font-size:42px;letter-spacing:-1.8px;color:var(--navy);margin:5px 0 12px}
+.intro{max-width:730px;color:var(--muted);font-size:16px;margin-bottom:42px}
+.story{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:27px 0;border-top:1px solid var(--line)}
+.year{color:var(--teal);font-size:13px;font-weight:900}.story h3{margin:0;color:var(--navy);font-size:20px}.where{color:var(--teal);font-weight:750;font-size:13px;margin:3px 0 8px}.story p{margin:0;max-width:780px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border:1px solid var(--line);padding:27px;min-height:220px}
+.card .n{font-size:11px;color:var(--teal);font-weight:900}.card h3{color:var(--navy);font-size:20px}.card p{font-size:14px;color:#56636b}
+.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:35px}
+.metric{background:var(--cream);padding:25px}.metric b{font-size:32px;color:var(--navy);display:block}.metric span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+.thesis{background:var(--soft);padding:40px;border-left:4px solid var(--teal);margin:30px 0}.thesis h3{color:var(--navy);font-size:24px;margin:5px 0 12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.detail{border-top:1px solid var(--line);padding-top:20px}.detail h3{color:var(--navy)}.detail p{color:#56636b}
+.contactbox{margin:70px 0;background:var(--navy);color:white;padding:55px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.contactbox h2{font-size:39px;margin:0 0 8px}.contactbox p{margin:0;color:#cbdce4}
+.mail{background:white;color:var(--navy);padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:900}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:12px;display:flex;justify-content:space-between}
+
+@media(max-width:760px){
+ .shell{padding:0 20px} nav{height:auto;padding:15px 0;align-items:flex-start}.tabs{flex-wrap:wrap;justify-content:flex-end}.brand{padding-top:8px}
+ .tab{padding:7px 8px;font-size:12px}.cvbtn{font-size:11px}
+ .hero{grid-template-columns:1fr;padding:60px 0}.hero-card{transform:none}h1{font-size:48px}.lead{font-size:18px}
+ .cards,.metric-row,.two{grid-template-columns:1fr}.story{grid-template-columns:1fr;gap:5px}.quote{font-size:25px}
+ .contactbox{grid-template-columns:1fr;padding:35px}.title{font-size:35px}
+}
+@media print{nav{position:static}.cvbtn{display:none}.panel{display:block!important}.hero{padding-top:40px}.hero-card{box-shadow:none;transform:none}.section{break-before:page}.contactbox{break-before:page}}
+
+/* Preserve the navy/teal identity while improving rhythm and small-screen fit. */
+.hero{grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);gap:clamp(30px,5vw,64px);padding:76px 0 58px}
+h1{font-size:clamp(48px,5.6vw,66px);line-height:1.04}
+.lead{max-width:37ch;line-height:1.6}
+.hero-card{padding:30px}.hero-card h2{font-size:clamp(24px,2.3vw,27px)}
+.quote{border-top:1px solid var(--line);padding:32px 0 62px;max-width:980px}
+.card{padding:26px;min-width:0}.card h3{margin:12px 0}.card p{font-size:16px;line-height:1.65;margin-bottom:0}
+.metric{display:flex;flex-direction:column;gap:6px}.metric span{font-size:12px;font-weight:700;color:#53616a}
+.metric small{font-size:13px;color:#53616a}.metric-source{font-size:13px;line-height:1.65;color:#53616a;max-width:850px;margin:18px 0 0}
+.metric-source a{color:var(--teal);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+.tab,.cvbtn{min-height:40px}footer{gap:14px;flex-wrap:wrap}
+@media(max-width:900px){.hero{gap:32px}.cards{gap:12px}.card{padding:20px}}
+@media(max-width:760px){nav{gap:12px;flex-wrap:wrap}.tabs{justify-content:flex-start;gap:4px}.hero{grid-template-columns:1fr;padding:44px 0;gap:36px}.hero-card{box-shadow:8px 8px 0 #d8ece9}.quote{padding:28px 0 42px}.section{padding:40px 0}.cards{grid-template-columns:1fr}.lead{max-width:none}.contactbox{padding:28px}.mail{justify-self:start}.thesis{padding:24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.panel{animation:none}}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav aria-label="Main navigation">
+  <div class="brand">YIQIAN<span>.</span></div>
+  <div class="tabs">
+    <button class="tab active" data-tab="home">Home</button>
+    <button class="tab" data-tab="story">Story</button>
+    <button class="tab" data-tab="work">Work</button>
+    <button class="tab" data-tab="food">Food Systems</button>
+    <button class="tab" data-tab="about">About</button>
+    <a class="cvbtn" href="vicky-cv.html">CV ↗</a>
+  </div>
+</nav>
+
+<main>
+<section id="home" class="panel active">
+ <div class="hero">
+  <div>
+   <div class="eyebrow">Business Analysis · Project Delivery · Supply Chain</div>
+   <h1>Hi, I’m<br>YIQIAN Guo.</h1>
+   <div class="lead">I turn complex information into clear decisions and coordinated action — drawing on healthcare and digital project experience, with a growing focus on food supply chains and operations.</div>
+  </div>
+  <aside class="hero-card">
+   <div class="small">Currently</div>
+   <h2>Exploring how fragmented restaurant demand can become smarter distribution networks.</h2>
+   <p>M.Sc. Food Quality &amp; Safety · University of Bayreuth · Germany</p>
+   <div class="pills"><span class="pill">GIS</span><span class="pill">Supply Chain</span><span class="pill">Food Quality</span><span class="pill">Business Analysis</span></div>
+  </aside>
+ </div>
+ <div class="quote">My work has grown from science and customer insight to strategy and delivery. Today, I’m connecting that experience to <em>food supply chains and operations</em>.</div>
+</section>
+
+<section id="story" class="panel section">
+ <div class="eyebrow">The path so far</div><h2 class="title">Not a straight line. A useful one.</h2>
+ <p class="intro">Yiqian’s background connects clinical nutrition, healthcare strategy, digital project delivery and food-system research. Each chapter added a different way of looking at the same question: how can complex information lead to better decisions?</p>
+ <div class="story"><div class="year">2015 — 2017</div><div><h3>Starting with people</h3><div class="where">Clinical Dietitian · Shanghai</div><p>Nutrition screening, therapeutic diet planning and patient education built an evidence-based foundation and a close view of how decisions affect people in practice.</p></div></div>
+ <div class="story"><div class="year">2017 — 2022</div><div><h3>Turning science into strategy</h3><div class="where">Consultech → McCann Health / IPG &amp; ADK</div><p>Scientific literature, market information and customer insight became strategies, workshops and recommendations for international healthcare and nutrition brands.</p></div></div>
+ <div class="story"><div class="year">2022 — 2024</div><div><h3>From strategy to delivery</h3><div class="where">Digital Marketing Intelligence Manager · NuancePharma</div><p>Cross-functional projects, dashboards, KPIs and digital platforms added a stronger operational and project-delivery dimension.</p></div></div>
+ <div class="story"><div class="year">2024 — NOW</div><div><h3>Looking at the whole system</h3><div class="where">M.Sc. Food Quality &amp; Safety · University of Bayreuth</div><p>Her current research brings the pieces together through supply chains, GIS and distribution-network design.</p></div></div>
+</section>
+
+<section id="work" class="panel section">
+ <div class="eyebrow">What I do</div><h2 class="title">Making complexity usable.</h2>
+ <p class="intro">The common thread in Yiqian’s work is structure: finding the signal in messy information, aligning people around it, and carrying decisions into execution.</p>
+ <div class="cards">
+  <div class="card"><div class="n">01</div><h3>Business Analysis</h3><p>Clarifying the objective, identifying the key constraint and separating what matters from the noise. I validate evidence, analyse the drivers and turn findings into recommendations with clear next steps.</p></div>
+  <div class="card"><div class="n">02</div><h3>Project Delivery</h3><p>Turning shared objectives into owners, milestones and follow-through. I make dependencies, delivery risks and the decisions needed next visible across specialist teams.</p></div>
+  <div class="card"><div class="n">03</div><h3>Strategy</h3><p>Turning scientific, customer and market information into positioning frameworks, workshops and actionable product strategies.</p></div>
+ </div>
+ <div class="metric-row">
+  <div class="metric"><b>10,000+</b><span>Registered platform users</span><small>Within six months of launch</small></div>
+  <div class="metric"><b>160+</b><span>Digital assets coordinated</span><small>Across product lines</small></div>
+  <div class="metric"><b>~50%</b><span>Quarterly platform activity</span><small>Reported for the same platform</small></div>
+ </div>
+ <p class="metric-source">NuancePharma · 2022–2024. Platform figures reflect team outcomes; my contribution covered rollout coordination and performance reporting. <a href="vicky-cv.html#nuancepharma">Source: CV experience ↗</a></p>
+</section>
+
+<section id="food" class="panel section">
+ <div class="eyebrow">Current focus</div><h2 class="title">Food supply chains &amp; operations.</h2>
+ <p class="intro">My current focus connects analytical work and project delivery with the physical systems that bring food to customers.</p>
+ <div class="thesis"><div class="eyebrow">Master’s thesis</div><h3>A GIS-Based Decision Framework for Food-Service Distribution Network Design</h3><p>Aggregating fragmented demand from small restaurants to explore more efficient food-service distribution networks.</p></div>
+ <div class="two">
+  <div class="detail"><h3>Research lens</h3><p>Distribution-network design · fragmented demand · demand aggregation · GIS-based analysis · food-service operations.</p></div>
+  <div class="detail"><h3>Academic foundation</h3><p>Supply Chain Management · Food Quality Management · Interdisciplinary Topics in Food Quality &amp; Safety · Food Metabolism.</p></div>
+ </div>
+</section>
+
+<section id="about" class="panel section">
+ <div class="eyebrow">A little more</div><h2 class="title">Science-minded. Business-oriented.</h2>
+ <p class="intro">Yiqian works comfortably between disciplines — with a foundation in nutrition, years of strategy and project experience, and a growing focus on logistics and operational improvement.</p>
+ <div class="two">
+  <div class="detail"><h3>Education</h3><p><b>M.Sc. Food Quality &amp; Safety</b><br>University of Bayreuth · 2024—Present</p><p><b>B.Sc. Nutriology</b><br>Shanghai University of Traditional Chinese Medicine · 2012—2016</p></div>
+  <div class="detail"><h3>Toolkit</h3><p><b>Tools:</b> Advanced Excel, QGIS, PowerPoint, Word, basic Python</p><p><b>Credentials:</b> PMI-ACP® · Chinese Registered Dietitian</p><p><b>Languages:</b> English fluent (professional working proficiency) · Mandarin native · Cantonese fluent · German B1, actively learning</p></div>
+ </div>
+ <div class="contactbox"><div><h2>Let’s connect.</h2><p>Based in Germany · Open to conversations around business analysis, project delivery and food supply chains.</p></div><a class="mail" href="mailto:Yiqi_guo@proton.me">Email YIQIAN</a></div>
+</section>
+</main>
+
+<footer><span>© 2026 YIQIAN Guo</span><span>Business · Data · Food Systems</span></footer>
+</div>
+<script>
+const tabs=[...document.querySelectorAll('.tab')], panels=[...document.querySelectorAll('.panel')];
+function show(id){
+ tabs.forEach(t=>{t.classList.toggle('active',t.dataset.tab===id);if(t.dataset.tab===id)t.setAttribute('aria-current','page');else t.removeAttribute('aria-current');});
+ panels.forEach(p=>p.classList.toggle('active',p.id===id));
+ history.replaceState(null,'','#'+id);
+ window.scrollTo({top:0,behavior:'instant'});
+}
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
+function syncHash(){const id=location.hash.slice(1);show(panels.some(p=>p.id===id)?id:'home');}
+window.addEventListener('hashchange',syncHash);syncHash();
+</script>
+</body>
+</html>

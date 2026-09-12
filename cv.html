@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YIQIAN GUO — CV</title>
+<style>
+  :root{
+    --ink:#173b56; --teal:#087f7c; --text:#20262c; --muted:#68747d;
+    --line:#d9e3e7; --paper:#fff; --wash:#f4f8f8;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:#edf2f3; color:var(--text);
+    font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    line-height:1.38;
+  }
+  .toolbar{
+    position:fixed; right:24px; top:22px; z-index:10;
+  }
+  button{
+    border:0; border-radius:999px; background:var(--ink); color:white;
+    padding:11px 17px; font-weight:700; cursor:pointer; box-shadow:0 5px 18px #173b5625;
+  }
+  .page{
+    width:min(1060px, calc(100% - 34px)); margin:32px auto;
+    background:var(--paper); box-shadow:0 16px 50px #173b5618;
+  }
+  header{
+    padding:58px 64px 34px;
+    border-top:7px solid var(--teal);
+  }
+  h1{
+    color:var(--ink); margin:0; font-size:38px; line-height:1; letter-spacing:-1.3px;
+  }
+  .tagline{
+    margin-top:9px; color:var(--teal); font-size:14px; font-weight:800;
+    letter-spacing:.9px; text-transform:uppercase;
+  }
+  .contact{
+    display:flex; flex-wrap:wrap; gap:7px 17px; margin-top:16px; color:var(--muted); font-size:13px;
+  }
+  .contact a{color:inherit; text-decoration:none}
+  .contact a:hover{color:var(--teal)}
+  main{padding:0 64px 58px}
+  section{margin-top:29px}
+  .section-title{
+    display:flex; align-items:center; gap:13px; color:var(--ink);
+    font-size:13px; font-weight:850; letter-spacing:1.2px; text-transform:uppercase;
+    margin:0 0 15px;
+  }
+  .section-title:after{content:""; height:1px; background:var(--line); flex:1}
+  .profile{font-size:15px; max-width:880px}
+  .expertise{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+  }
+  .expertise article{
+    background:var(--wash); padding:17px 18px; border-radius:5px; border-top:2px solid var(--teal);
+  }
+  .num{font-size:11px; color:var(--teal); font-weight:800}
+  .expertise h3{margin:4px 0 7px; color:var(--ink); font-size:14px}
+  .expertise p{margin:0; color:#53616a; font-size:12.5px}
+  .role{
+    display:grid; grid-template-columns:125px 1fr; gap:25px; padding:5px 0 22px;
+    position:relative;
+  }
+  .role:not(:last-child):after{
+    content:""; position:absolute; left:124px; top:12px; bottom:-3px; width:1px; background:var(--line);
+  }
+  .dates{color:var(--muted); font-size:12px; padding-top:3px; text-align:right}
+  .role-body{padding-left:3px}
+  .role h3{margin:0; color:var(--ink); font-size:16px}
+  .company{color:var(--teal); font-weight:750}
+  .location{color:var(--muted); font-size:12px; margin-top:2px}
+  ul{margin:9px 0 0; padding-left:18px}
+  li{margin:4px 0; font-size:13px}
+  li::marker{color:var(--teal)}
+  .metrics{display:flex; gap:9px; flex-wrap:wrap; margin-top:12px}
+  .metric{
+    border:1px solid var(--line); border-radius:4px; padding:7px 10px;
+    min-width:112px;
+  }
+  .metric b{display:block; color:var(--ink); font-size:15px}
+  .metric span{font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.5px}
+  .edu-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px}
+  .edu h3{font-size:14px; color:var(--ink); margin:0}
+  .edu .school{color:var(--teal); font-weight:750; font-size:13px}
+  .edu p{font-size:12.5px; margin:6px 0 0}
+  .bottom-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:28px}
+  .mini h3{font-size:12px; color:var(--ink); text-transform:uppercase; letter-spacing:.8px; margin:0 0 7px}
+  .mini p{font-size:12.5px; margin:0; line-height:1.55}
+  footer{
+    padding:16px 64px; background:var(--ink); color:#dce8ee; font-size:10px;
+    display:flex; justify-content:space-between;
+  }
+
+  @media(max-width:720px){
+    header,main{padding-left:28px;padding-right:28px}
+    header{padding-top:42px}
+    h1{font-size:31px}
+    .expertise,.edu-grid,.bottom-grid{grid-template-columns:1fr}
+    .role{grid-template-columns:1fr;gap:3px}
+    .dates{text-align:left}
+    .role:not(:last-child):after{display:none}
+    .toolbar{right:12px;top:12px}
+  }
+
+  .toolbar{display:flex;gap:12px;align-items:center;background:var(--paper);padding:6px;border-radius:999px}
+  .toolbar a{font-size:13px;color:var(--ink);padding:0 8px;text-decoration:none}
+  :focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+  #nuancepharma{scroll-margin-top:90px}
+  @media screen{.profile{font-size:16px}li{font-size:14px}.expertise p,.edu p,.mini p{font-size:14px}footer{gap:12px;flex-wrap:wrap}}
+  @media(max-width:720px){.toolbar{position:static;justify-content:center;margin:12px auto;width:fit-content}.page{margin-top:12px}footer{padding:16px 28px}.contact{overflow-wrap:anywhere}}
+  @page{size:A4;margin:10mm}
+  @media print{
+    body{background:white; font-size:9.5pt; line-height:1.24}
+    .toolbar{display:none}
+    .page{width:auto;margin:0;box-shadow:none}
+    header{padding:5mm 6mm 3mm;border-top:3px solid var(--teal)}
+    main{padding:0 6mm 3mm}
+    h1{font-size:23pt}
+    .tagline{font-size:8.5pt;margin-top:4px}
+    .contact{font-size:7.5pt;margin-top:7px}
+    section{margin-top:10px}
+    .section-title{font-size:8pt;margin-bottom:6px}
+    .profile{font-size:8.4pt}
+    .expertise{gap:6px}
+    .expertise article{padding:7px 9px}
+    .expertise h3{font-size:8pt;margin:2px 0 3px}
+    .expertise p{font-size:7.2pt}
+    .num{font-size:6.5pt}
+    .role{grid-template-columns:24mm 1fr;gap:5mm;padding:2px 0 7px;break-inside:avoid}
+    .role:not(:last-child):after{left:24mm;top:7px;bottom:-2px}
+    .dates,.location{font-size:6.8pt}
+    .role h3{font-size:8.5pt}
+    li{font-size:7.25pt;margin:1.5px 0}
+    ul{margin-top:4px}
+    .metrics{margin-top:5px;gap:5px}
+    .metric{padding:3px 6px;min-width:25mm}
+    .metric b{font-size:8pt}.metric span{font-size:5.7pt}
+    .edu-grid,.bottom-grid{gap:7mm}
+    .edu h3{font-size:8pt}.edu .school{font-size:7.2pt}.edu p,.mini p{font-size:6.9pt}
+    .mini h3{font-size:7pt;margin-bottom:3px}
+    footer{padding:3mm 6mm;font-size:6pt}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar"><a href="index.html">← Website</a><button onclick="window.print()">Print / Save PDF</button></div>
+
+<div class="page">
+<header>
+  <h1>YIQIAN GUO</h1>
+  <div class="tagline">Business Analysis &nbsp;•&nbsp; Project Delivery &nbsp;•&nbsp; Food Supply Chain</div>
+  <div class="contact">
+    <span>Germany</span>
+    <span>+49 162 8631845</span>
+    <a href="mailto:Yiqi_guo@proton.me">Yiqi_guo@proton.me</a>
+    <span>LinkedIn: YQ Guo</span>
+  </div>
+</header>
+
+<main>
+<section>
+  <h2 class="section-title">Profile</h2>
+  <div class="profile">
+    Business and project-delivery professional with 8+ years of experience clarifying complex problems,
+    aligning cross-functional teams and turning evidence into decisions across healthcare and digital initiatives.
+    Now applying that experience to food supply chains and operations while completing an M.Sc. in
+    Food Quality &amp; Safety in Germany. Combines advanced Excel analysis, stakeholder alignment and
+    reliable follow-through with GIS-based research into food-service distribution networks.
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Core Expertise</h2>
+  <div class="expertise">
+    <article><div class="num">01</div><h3>BUSINESS ANALYSIS</h3><p>Objective and constraint definition · evidence validation · Excel analysis · recommendations and follow-up</p></article>
+    <article><div class="num">02</div><h3>PROJECT DELIVERY</h3><p>Cross-functional delivery · milestone tracking · stakeholder alignment · process improvement</p></article>
+    <article><div class="num">03</div><h3>FOOD &amp; LOGISTICS</h3><p>Distribution-network research · demand aggregation · food quality &amp; safety · GIS analysis</p></article>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Professional Experience</h2>
+
+  <div class="role" id="nuancepharma">
+    <div class="dates">2022 — 2024</div>
+    <div class="role-body">
+      <h3>Digital Marketing Intelligence Manager <span class="company">| NuancePharma</span></h3>
+      <div class="location">Shanghai, China</div>
+      <ul>
+        <li>Served as PMO for cross-functional digital and market-intelligence initiatives, aligning Commercial, Medical, Compliance, Sales, and external partners around objectives, milestones, and delivery risks.</li>
+        <li>Built monthly Excel dashboards from customer, content and project data; cleaned and validated inputs, identified patterns and delivery risks, and prepared recommendations and follow-up for business units and senior leadership.</li>
+        <li>Led a pharmacy-management platform rollout across internal teams and external partners. The platform reached 10,000+ registered users within six months and approximately 50% quarterly activity.</li>
+        <li>Coordinated 160+ digital communication assets across product lines, improving visibility, consistency, and on-time execution across internal teams and agencies.</li>
+      </ul>
+      <div class="metrics">
+        <div class="metric"><b>10,000+</b><span>Registered users · within 6 months</span></div>
+        <div class="metric"><b>160+</b><span>Digital assets</span></div>
+        <div class="metric"><b>~50%</b><span>Quarterly activity</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="role">
+    <div class="dates">2019 — 2022</div>
+    <div class="role-body">
+      <h3>Science Strategic Planning Manager <span class="company">| McCann Health / IPG &amp; ADK Group</span></h3>
+      <div class="location">Shanghai, China</div>
+      <ul>
+        <li>Structured complex scientific, customer, and market information into clear product strategies, positioning frameworks, and actionable recommendations for multinational healthcare and nutrition clients.</li>
+        <li>Coordinated strategy, creative, medical, marketing, and sales stakeholders under tight timelines; facilitated workshops and adapted global frameworks for local execution.</li>
+        <li>Supported portfolios including Sanofi, Gilead, GSK, Meiji, and Morinaga, rapidly building domain knowledge across products and therapeutic areas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="role">
+    <div class="dates">2017 — 2019</div>
+    <div class="role-body">
+      <h3>Senior Medical Advisor <span class="company">| Consultech Advertising</span></h3>
+      <div class="location">Shanghai, China</div>
+      <ul>
+        <li>Developed evidence-based strategy and education materials for international nutrition brands including Wyeth, Nestlé, Gerber, Nutricia, and Heinz.</li>
+        <li>Combined scientific literature, qualitative research, and customer insights into product stories, workshops, and business-ready recommendations; promoted within two years based on performance.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="role">
+    <div class="dates">2015 — 2017</div>
+    <div class="role-body">
+      <h3>Clinical Dietitian <span class="company">| Public Hospitals</span></h3>
+      <div class="location">Shanghai, China</div>
+      <ul>
+        <li>Delivered nutrition screening, therapeutic diet planning, and patient education in multidisciplinary clinical settings; recognised as an Excellent Trainee by the Shanghai Municipal Health Commission.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu">
+      <h3>M.Sc. Food Quality &amp; Safety</h3>
+      <div class="school">University of Bayreuth</div>
+      <div class="location">Germany · 2024—Present</div>
+      <p><b>Master's thesis:</b> A GIS-Based Decision Framework for Food-Service Distribution Network Design—Aggregating Fragmented Demand from Small Restaurants.</p>
+      <p><b>Selected coursework:</b> Supply Chain Management (2.1); Food Quality Management (1.7); Interdisciplinary Topics in Food Quality &amp; Safety (1.0); Food Metabolism (1.7, practical: 1.0).</p>
+    </div>
+    <div class="edu">
+      <h3>B.Sc. Nutriology</h3>
+      <div class="school">Shanghai University of Traditional Chinese Medicine</div>
+      <div class="location">Shanghai, China · 2012—2016</div>
+      <p>Outstanding Graduate Thesis Award; clinical nutrition training and evidence-based research foundation.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Technical Skills &amp; Languages</h2>
+  <div class="bottom-grid">
+    <div class="mini"><h3>Tools</h3><p>Excel — advanced<br>QGIS<br>PowerPoint · Word<br>Basic Python</p></div>
+    <div class="mini"><h3>Languages</h3><p>English — fluent (professional working proficiency)<br>Mandarin — native<br>Cantonese — fluent<br>German — B1, actively learning</p></div>
+    <div class="mini"><h3>Credentials</h3><p>PMI-ACP®<br>Chinese Registered Dietitian</p></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>YIQIAN Guo</span>
+  <span>Business Analysis · Project Delivery · Food Supply Chain</span>
+</footer>
+</div>
+</body>
+</html>
